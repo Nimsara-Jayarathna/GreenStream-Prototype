@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenStream - Your Climate Intelligence Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="landing-header">
+        <div class="container">
+            <div class="logo">GreenStream</div>
+            <nav>
+                <button class="btn btn--secondary" id="login-btn">Login</button>
+                <button class="btn btn--primary" id="signup-btn">Sign Up</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Actionable Insights on Climate Change, in Real-Time.</h1>
+                <p class="hero__subtitle">GreenStream cuts through the noise, delivering categorized, de-duplicated news to power your research and decision-making.</p>
+                <button class="btn btn--primary btn--large" id="cta-signup-btn">Get Started for Free</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features container">
+             <div class="feature-item">
+                <i class="fas fa-robot feature-item__icon"></i>
+                <h3 class="feature-item__title">Automated Aggregation</h3>
+                <p>We fetch news from top global sources automatically, so you don't have to.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-tags feature-item__icon"></i>
+                <h3 class="feature-item__title">Intelligent Filtering</h3>
+                <p>Instantly filter by category, source, or keywords to find exactly what you need.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-bookmark feature-item__icon"></i>
+                <h3 class="feature-item__title">Personalized Bookmarks</h3>
+                <p>Save important articles to your personal library for easy access anytime.</p>
+            </div>
+        </section>
+
+        <!-- Latest News Preview -->
+        <section class="news-preview">
+            <div class="container">
+                <h2 class="news-preview__title">Latest in Climate News</h2>
+                <div class="article-grid" id="preview-article-grid">
+                    <!-- Placeholder articles will be loaded here by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <p>© 2025 GreenStream | SE2012 Group Project</p>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal-overlay hidden" id="auth-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close">&times;</button>
+            <!-- Login Form -->
+            <div id="login-view">
+                <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                    <h2 class="modal-form__title">Welcome Back</h2>
+                    <div class="input-group">
+                        <label for="login-email" class="input-group__label">Email</label>
+                        <input type="email" id="login-email" class="input-group__input" required value="dr.sharma@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password" class="input-group__label">Password</label>
+                        <input type="password" id="login-password" class="input-group__input" required value="password123">
+                    </div>
+                    <button type="submit" class="btn btn--primary" style="width:100%">Login</button>
+                    <p class="form-switch">No account? <a href="#" id="show-signup">Create one</a></p>
+                </form>
+            </div>
+            <!-- Signup Form -->
+            <div id="signup-view" class="hidden">
+                 <form id="signup-form">
+                    <h2 class="modal-form__title">Create Account</h2>
+                    <div class="input-group">
+                        <label for="signup-name" class="input-group__label">Full Name</label>
+                        <input type="text" id="signup-name" class="input-group__input" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-email" class="input-group__label">Email</label>
+                        <input type="email" id="signup-email" class="input-group__input" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password" class="input-group__label">Password</label>
+                        <input type="password" id="signup-password" class="input-group__input" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary" style="width:100%">Sign Up</button>
+                    <p class="form-switch">Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/landing.js"></script>
+</body>
+</html>
