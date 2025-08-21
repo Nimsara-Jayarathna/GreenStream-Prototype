@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraPulse - Your Climate Intelligence Hub</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
-<body class="landing-page">
+<body>
     <header class="landing-header">
         <div class="container">
             <div class="logo">TerraPulse</div>
@@ -28,9 +31,9 @@
         </section>
 
         <section class="features container">
-            <div class="feature-item"><i class="fas fa-robot feature-item__icon"></i><h3 class="feature-item__title">Automated Aggregation</h3><p>We fetch news from top global sources automatically, so you don't have to.</p></div>
-            <div class="feature-item"><i class="fas fa-tags feature-item__icon"></i><h3 class="feature-item__title">Intelligent Filtering</h3><p>Instantly filter by category, source, or keywords to find exactly what you need.</p></div>
-            <div class="feature-item"><i class="fas fa-bookmark feature-item__icon"></i><h3 class="feature-item__title">Personalized Feed</h3><p>Save your favorite topics and sources for a news feed tailored just for you.</p></div>
+            <div class="feature-item"><i class="fas fa-robot feature-item__icon"></i><h3 class="feature-item__title">Automated Aggregation</h3><p>We fetch news from top global sources automatically.</p></div>
+            <div class="feature-item"><i class="fas fa-tags feature-item__icon"></i><h3 class="feature-item__title">Intelligent Filtering</h3><p>Instantly filter by category, source, or keywords.</p></div>
+            <div class="feature-item"><i class="fas fa-bookmark feature-item__icon"></i><h3 class="feature-item__title">Personalized Feed</h3><p>Save your favorite topics for a tailored news feed.</p></div>
         </section>
 
         <section class="news-preview">
@@ -60,7 +63,7 @@
                  <form id="signup-form">
                     <h2 class="modal-form__title">Create Account</h2>
                     <div class="input-group"><label for="signup-name" class="input-group__label">Full Name</label><input type="text" id="signup-name" class="input-group__input" required></div>
-                    <div class="input-group"><label for="signup-title" class="input-group__label">Job Title (e.g., Researcher)</label><input type="text" id="signup-title" class="input-group__input" required></div>
+                    <div class="input-group"><label for="signup-title" class="input-group__label">Job Title</label><input type="text" id="signup-title" class="input-group__input" required></div>
                     <div class="input-group"><label for="signup-email" class="input-group__label">Email</label><input type="email" id="signup-email" class="input-group__input" required></div>
                     <div class="input-group"><label for="signup-password" class="input-group__label">Password</label><input type="password" id="signup-password" class="input-group__input" required></div>
                     <button type="submit" class="btn btn--primary" style="width:100%">Sign Up</button>

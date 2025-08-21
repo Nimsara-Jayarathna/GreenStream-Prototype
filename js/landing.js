@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('show-signup').addEventListener('click', (e) => { e.preventDefault(); openModal('signup'); });
     document.getElementById('show-login').addEventListener('click', (e) => { e.preventDefault(); openModal('login'); });
 
-    // --- Registration Logic ---
+    // --- Registration & Login Logic ---
     const signupForm = document.getElementById('signup-form');
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -51,31 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
             email: document.getElementById('signup-email').value,
             password: document.getElementById('signup-password').value,
         };
-        // Simulate saving user to a database
         localStorage.setItem('registeredUser', JSON.stringify(user));
         alert('Registration successful! Please login to continue.');
         openModal('login');
     });
 
-    // --- Login Validation Logic ---
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error');
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        loginError.textContent = ''; // Clear previous errors
-        
+        loginError.textContent = '';
         const registeredUserJSON = localStorage.getItem('registeredUser');
         if (!registeredUserJSON) {
             loginError.textContent = 'No user registered. Please sign up first.';
             return;
         }
-
         const registeredUser = JSON.parse(registeredUserJSON);
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-
         if (email === registeredUser.email && password === registeredUser.password) {
-            // Store a "session" to be used by the dashboard
             localStorage.setItem('loggedInUser', JSON.stringify(registeredUser));
             window.location.href = 'dashboard.html';
         } else {
