@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
-<body>
+<body class="dashboard-page">
     <header class="main-header">
         <div class="logo">TerraPulse</div>
         <button class="btn btn--secondary mobile-filter-toggle" id="mobile-filter-toggle"><i class="fas fa-filter"></i> Filters</button>
@@ -26,84 +26,42 @@
 
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <!-- Sidebar content is unchanged -->
             <div class="sidebar__header">
                 <h3 class="sidebar__title"><i class="fas fa-filter"></i> Filters</h3>
                 <button class="btn--text" id="clear-filters-btn">Clear All</button>
             </div>
-            <div class="filter-group">
-                <input type="search" id="search-input" placeholder="Search by keyword..." class="input-group__input">
-            </div>
-            <div class="filter-group">
-                <h4 class="filter-group__title">Categories</h4>
-                <label><input type="checkbox" name="category" value="Energy"> Renewable Energy</label>
-                <label><input type="checkbox" name="category" value="Policy"> Climate Policy</label>
-                <label><input type="checkbox" name="category" value="Tech"> Green Tech</label>
-            </div>
-             <div class="filter-group">
-                <h4 class="filter-group__title">Sources</h4>
-                <label><input type="checkbox" name="source" value="Reuters"> Reuters</label>
-                <label><input type="checkbox" name="source" value="The Guardian"> The Guardian</label>
-                <label><input type="checkbox" name="source" value="CleanTechnica"> CleanTechnica</label>
-            </div>
+            <div class="filter-group"><input type="search" id="search-input" placeholder="Search by keyword..." class="input-group__input"></div>
+            <div class="filter-group"><h4 class="filter-group__title">Categories</h4><label><input type="checkbox" name="category" value="Energy"> Renewable Energy</label><label><input type="checkbox" name="category" value="Policy"> Climate Policy</label><label><input type="checkbox" name="category" value="Tech"> Green Tech</label></div>
+            <div class="filter-group"><h4 class="filter-group__title">Sources</h4><label><input type="checkbox" name="source" value="Reuters"> Reuters</label><label><input type="checkbox" name="source" value="The Guardian"> The Guardian</label><label><input type="checkbox" name="source" value="CleanTechnica"> CleanTechnica</label></div>
         </aside>
 
         <main class="content-area">
-            <!-- Main content area is unchanged -->
             <div class="content-tabs">
                 <button class="tab-link active" data-view="for-you-view">For You</button>
                 <button class="tab-link" data-view="all-articles-view">All News</button>
                 <button class="tab-link" data-view="bookmarks-view">My Bookmarks</button>
             </div>
-
             <section id="for-you-view" class="tab-content active"><div id="for-you-grid" class="article-grid"></div></section>
             <section id="all-articles-view" class="tab-content"><div id="articles-grid" class="article-grid"></div><div id="pagination-container" class="pagination"></div></section>
             <section id="bookmarks-view" class="tab-content"><div id="bookmarks-grid" class="article-grid"></div></section>
         </main>
     </div>
 
-    <!-- Modals are unchanged -->
     <div class="modal-overlay hidden" id="profile-modal">
         <div class="modal-content">
             <button class="modal-close-btn" id="profile-modal-close">&times;</button>
             <form id="profile-form">
                 <h2 class="modal-form__title">Manage Profile & Preferences</h2>
-                 <div class="input-group">
-                    <label for="profile-name" class="input-group__label">Full Name</label>
-                    <input type="text" id="profile-name" class="input-group__input">
-                </div>
-                <div class="input-group">
-                    <label class="input-group__label">Preferred Categories</label>
-                    <div class="input-group__checkbox-group">
-                        <label><input type="checkbox" name="preference" value="Energy"> Renewable Energy</label>
-                        <label><input type="checkbox" name="preference" value="Policy"> Climate Policy</label>
-                        <label><input type="checkbox" name="preference" value="Tech"> Green Tech</label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label class="input-group__label">Preferred Sources</label>
-                    <div class="input-group__checkbox-group">
-                        <label><input type="checkbox" name="preference-source" value="Reuters"> Reuters</label>
-                        <label><input type="checkbox" name="preference-source" value="The Guardian"> The Guardian</label>
-                        <label><input type="checkbox" name="preference-source" value="CleanTechnica"> CleanTechnica</label>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label for="tracked-keywords" class="input-group__label">Tracked Keywords (comma-separated)</label>
-                    <input type="text" id="tracked-keywords" placeholder="e.g., carbon capture, ESG, ev batteries" class="input-group__input">
-                </div>
+                <div class="input-group"><label for="profile-name" class="input-group__label">Full Name</label><input type="text" id="profile-name" class="input-group__input"></div>
+                <div class="input-group"><label class="input-group__label">Preferred Categories</label><div class="input-group__checkbox-group"><label><input type="checkbox" name="preference" value="Energy"> Renewable Energy</label><label><input type="checkbox" name="preference" value="Policy"> Climate Policy</label><label><input type="checkbox" name="preference" value="Tech"> Green Tech</label></div></div>
+                <div class="input-group"><label class="input-group__label">Preferred Sources</label><div class="input-group__checkbox-group"><label><input type="checkbox" name="preference-source" value="Reuters"> Reuters</label><label><input type="checkbox" name="preference-source" value="The Guardian"> The Guardian</label><label><input type="checkbox" name="preference-source" value="CleanTechnica"> CleanTechnica</label></div></div>
+                <div class="input-group"><label for="tracked-keywords" class="input-group__label">Tracked Keywords (comma-separated)</label><input type="text" id="tracked-keywords" placeholder="e.g., carbon capture, ESG" class="input-group__input"></div>
                 <button type="submit" class="btn btn--primary" style="width:100%">Save Changes</button>
             </form>
         </div>
     </div>
-    <div class="modal-overlay hidden" id="article-detail-modal">
-        <div class="modal-content modal-content--wide">
-            <button class="modal-close-btn" id="article-modal-close">&times;</button>
-            <div id="article-detail-content"></div>
-        </div>
-    </div>
+    <div class="modal-overlay hidden" id="article-detail-modal"><div class="modal-content modal-content--wide"><button class="modal-close-btn" id="article-modal-close">&times;</button><div id="article-detail-content"></div></div></div>
     <div class="toast hidden" id="toast-notification"></div>
-
     <script src="js/dashboard.js"></script>
 </body>
 </html>
